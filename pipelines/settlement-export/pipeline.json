@@ -1,0 +1,20 @@
+{
+  "pipeline_key": "settlement-export",
+  "owner_team": "Revenue Data",
+  "runtime": "python3.12",
+  "schedule": "45 6 * * *",
+  "depends_on": [
+    "curtailment-report",
+    "outage-replay",
+    "archive-indexer"
+  ],
+  "tests": {
+    "unit": 11,
+    "integration": 3
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "backoff": "exponential"
+  },
+  "output_dataset": "finance.settlement_export"
+}

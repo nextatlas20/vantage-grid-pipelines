@@ -1,0 +1,18 @@
+{
+  "pipeline_key": "sensor-calibration",
+  "owner_team": "Metering",
+  "runtime": "python3.11",
+  "schedule": "0 2 * * 0",
+  "depends_on": [
+    "ingestion-core"
+  ],
+  "tests": {
+    "unit": 6,
+    "integration": 3
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "backoff": "exponential"
+  },
+  "output_dataset": "curated.sensor_calibration"
+}

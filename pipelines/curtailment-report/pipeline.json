@@ -1,0 +1,18 @@
+{
+  "pipeline_key": "curtailment-report",
+  "owner_team": "Grid Reliability",
+  "runtime": "python3.11",
+  "schedule": "15 7 * * *",
+  "depends_on": [
+    "billing-ledger-sync"
+  ],
+  "tests": {
+    "unit": 7,
+    "integration": 4
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "backoff": "exponential"
+  },
+  "output_dataset": "ops.curtailment_daily"
+}

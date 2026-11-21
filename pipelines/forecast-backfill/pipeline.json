@@ -1,0 +1,18 @@
+{
+  "pipeline_key": "forecast-backfill",
+  "owner_team": "Load Forecasting",
+  "runtime": "python3.11",
+  "schedule": "0 4 * * *",
+  "depends_on": [
+    "meter-stream-rollup"
+  ],
+  "tests": {
+    "unit": 15,
+    "integration": 5
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "backoff": "linear"
+  },
+  "output_dataset": "forecast.load_backfill"
+}

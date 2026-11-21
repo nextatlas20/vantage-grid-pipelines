@@ -1,0 +1,18 @@
+{
+  "pipeline_key": "legacy-dashboard-refresh",
+  "owner_team": "BI Enablement",
+  "runtime": "python3.8",
+  "schedule": "0 8 * * *",
+  "depends_on": [
+    "archive-indexer"
+  ],
+  "tests": {
+    "unit": 3,
+    "integration": 1
+  },
+  "retry_policy": {
+    "max_attempts": 1,
+    "backoff": "none"
+  },
+  "output_dataset": "bi.dashboard_refresh"
+}

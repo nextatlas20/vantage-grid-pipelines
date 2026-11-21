@@ -1,0 +1,16 @@
+{
+  "pipeline_key": "ingestion-core",
+  "owner_team": "Platform Ingestion",
+  "runtime": "python3.11",
+  "schedule": "*/15 * * * *",
+  "depends_on": [],
+  "tests": {
+    "unit": 41,
+    "integration": 6
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "backoff": "exponential"
+  },
+  "output_dataset": "raw.grid_telemetry"
+}

@@ -1,0 +1,19 @@
+{
+  "pipeline_key": "tariff-snapshot",
+  "owner_team": "Pricing Data",
+  "runtime": "python3.11",
+  "schedule": "30 3 * * *",
+  "depends_on": [
+    "ingestion-core",
+    "meter-stream-rollup"
+  ],
+  "tests": {
+    "unit": 12,
+    "integration": 3
+  },
+  "retry_policy": {
+    "max_attempts": 3,
+    "backoff": "exponential"
+  },
+  "output_dataset": "curated.tariff_snapshot"
+}

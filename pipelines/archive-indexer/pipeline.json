@@ -1,0 +1,16 @@
+{
+  "pipeline_key": "archive-indexer",
+  "owner_team": "Platform Ingestion",
+  "runtime": "python3.7",
+  "schedule": "0 1 * * *",
+  "depends_on": [],
+  "tests": {
+    "unit": 5,
+    "integration": 0
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "backoff": "linear"
+  },
+  "output_dataset": "raw.archive_index"
+}
