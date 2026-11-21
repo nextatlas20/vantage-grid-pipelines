@@ -1,0 +1,9 @@
+Pipeline Key,Owner Team,Readiness,Failing Check,Blocked By
+billing-ledger-sync,Revenue Data,Not ready,Runtime,
+curtailment-report,Grid Reliability,Blocked,Dependency,billing-ledger-sync
+forecast-backfill,Load Forecasting,Not ready,Retry policy,
+ingestion-core,Platform Ingestion,Ready,,
+meter-stream-rollup,Metering,Ready,,
+outage-replay,Grid Reliability,Not ready,Integration tests,
+settlement-export,Revenue Data,Blocked,Dependency,curtailment-report; outage-replay
+tariff-snapshot,Pricing Data,Ready,,
